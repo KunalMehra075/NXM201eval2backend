@@ -1,0 +1,3 @@
+ db.purchases.createIndex({"user_id":1})
+
+ db.users.aggregate([{$lookup:{from:"purchases",localField:"_id",foreignField:"user_id",as:"Data"}}])
